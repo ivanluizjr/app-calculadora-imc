@@ -5,7 +5,7 @@ import '../widgets/icon_content.dart';
 import '../widgets/container_inicial.dart';
 import '../widgets/constants.dart';
 import '../widgets/round_icon_button.dart';
-import '../controller/app-controller.dart';
+import '../controller/app_controller.dart';
 
 class InputPage extends StatefulWidget {
   @override
@@ -29,11 +29,10 @@ class _InputPageState extends State<InputPage> {
 
   @override
   Widget build(BuildContext context) {
-    String titulo = 'Calcular IMC';
     return Scaffold(
       appBar: AppBar(
         title: Center(
-          child: Text(titulo),
+          child: Text(kNameApp),
         ),
       ),
       body: Column(
