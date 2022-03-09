@@ -5,7 +5,15 @@ import '../widgets/container_inicial.dart';
 import '../widgets/bottom_button.dart';
 
 class ResultPage extends StatelessWidget {
-  const ResultPage({Key key}) : super(key: key);
+  // ignore: use_key_in_widget_constructors
+  const ResultPage(
+      {@required this.imcResult,
+      @required this.resultText,
+      @required this.interpretation});
+
+  final String imcResult;
+  final String resultText;
+  final String interpretation;
 
   @override
   Widget build(BuildContext context) {
@@ -37,17 +45,17 @@ class ResultPage extends StatelessWidget {
               cardChild: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 crossAxisAlignment: CrossAxisAlignment.center,
-                children: const [
+                children: [
                   Text(
-                    'Normal',
+                    resultText.toUpperCase(),
                     style: kResultTextStyle,
                   ),
                   Text(
-                    '18',
+                    imcResult,
                     style: kIMCTextStyle,
                   ),
                   Text(
-                    'Seu resultado está muito bom',
+                    interpretation,
                     style: kBodyTextStyle,
                     textAlign: TextAlign.center,
                   ),

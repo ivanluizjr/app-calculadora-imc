@@ -7,6 +7,7 @@ import '../widgets/constants.dart';
 import '../widgets/round_icon_button.dart';
 import '../controller/app_controller.dart';
 import '../widgets/bottom_button.dart';
+import '../src/calculator_brain.dart';
 
 class InputPage extends StatefulWidget {
   @override
@@ -214,10 +215,17 @@ class _InputPageState extends State<InputPage> {
           BottomButton(
             buttonTitle: 'Calcular IMC',
             onTap: () {
+              CalculatorBrain calc =
+                  CalculatorBrain(height: height, weight: controller.weight);
+
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => const ResultPage(),
+                  builder: (context) => ResultPage(
+                    imcResult: calc.calculatorIMC(),
+                    resultText: calc.getResult(),
+                    interpretation: calc.getInterpretation(),
+                  ),
                 ),
               );
             },
