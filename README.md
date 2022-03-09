@@ -9,3 +9,8 @@
 #### :construction: Em Construção :construction:
 
 ![Porjeto_IMC](https://user-images.githubusercontent.com/41458938/156476514-5d9db42c-58c7-4ada-b60c-f3e87ef5b37c.gif)
+
+#
+
+![mascotFlutter](https://user-images.githubusercontent.com/41458938/156568167-032eec92-cf6a-4cd2-9ed8-84c03872e603.jpeg)
+

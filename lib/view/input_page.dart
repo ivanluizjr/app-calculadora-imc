@@ -6,6 +6,7 @@ import '../widgets/container_inicial.dart';
 import '../widgets/constants.dart';
 import '../widgets/round_icon_button.dart';
 import '../controller/app_controller.dart';
+import '../widgets/bottom_button.dart';
 
 class InputPage extends StatefulWidget {
   @override
@@ -31,7 +32,7 @@ class _InputPageState extends State<InputPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Center(
+        title: const Center(
           child: Text(kNameApp),
         ),
       ),
@@ -82,8 +83,8 @@ class _InputPageState extends State<InputPage> {
               colour: kColumnCentralColor,
               cardChild: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  Text(
+                children: [
+                  const Text(
                     'ALTURA',
                     style: kLabelTextStyle,
                   ),
@@ -96,7 +97,7 @@ class _InputPageState extends State<InputPage> {
                         height.toString(),
                         style: kNumberTextStyle,
                       ),
-                      Text(
+                      const Text(
                         'cm',
                         style: kLabelTextStyle,
                       ),
@@ -105,13 +106,13 @@ class _InputPageState extends State<InputPage> {
                   SliderTheme(
                     data: SliderTheme.of(context).copyWith(
                       activeTrackColor: Colors.white,
-                      inactiveTickMarkColor: Color(0xFF8D8E98),
-                      thumbColor: Color(0xFFEB1555),
-                      overlayColor: Color(0x29EB1555),
+                      inactiveTickMarkColor: const Color(0xFF8D8E98),
+                      thumbColor: const Color(0xFFEB1555),
+                      overlayColor: const Color(0x29EB1555),
                       thumbShape:
-                          RoundSliderThumbShape(enabledThumbRadius: 15.0),
+                          const RoundSliderThumbShape(enabledThumbRadius: 15.0),
                       overlayShape:
-                          RoundSliderOverlayShape(overlayRadius: 30.0),
+                          const RoundSliderOverlayShape(overlayRadius: 30.0),
                     ),
                     child: Slider(
                       value: height.toDouble(),
@@ -137,7 +138,7 @@ class _InputPageState extends State<InputPage> {
                     cardChild: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
-                        Text(
+                        const Text(
                           'PESO',
                           style: kLabelTextStyle,
                         ),
@@ -154,7 +155,7 @@ class _InputPageState extends State<InputPage> {
                                   controller.subPeso();
                                 },
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 width: 10.0,
                               ),
                               RoundIconButton(
@@ -175,8 +176,8 @@ class _InputPageState extends State<InputPage> {
                     colour: kActiveColor,
                     cardChild: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
-                      children: <Widget>[
-                        Text(
+                      children: [
+                        const Text(
                           'IDADE',
                           style: kLabelTextStyle,
                         ),
@@ -193,7 +194,7 @@ class _InputPageState extends State<InputPage> {
                                   controller.subAge();
                                 },
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 width: 10.0,
                               ),
                               RoundIconButton(
@@ -210,32 +211,16 @@ class _InputPageState extends State<InputPage> {
               ],
             ),
           ),
-          Container(
-            color: kBottomContainerColor,
-            margin: EdgeInsets.only(top: 10.0),
-            width: double.infinity,
-            height: kBottomContainerHeight,
-            child: InkWell(
-              onTap: () {
-                Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (context) => ResultPage(),
-                  ),
-                );
-              },
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    'PRESSIONE PARA CALCULAR',
-                    style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ],
-              ),
-            ),
+          BottomButton(
+            buttonTitle: 'Calcular IMC',
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const ResultPage(),
+                ),
+              );
+            },
           ),
         ],
       ),
