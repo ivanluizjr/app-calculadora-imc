@@ -10,7 +10,7 @@
 
 ### Projeto Finalizado
 
-![Teste_Calc](https://user-images.githubusercontent.com/41458938/157527850-d2207ae0-62d1-454d-8a10-58a896dd86b1.gif)
+![Calc_IMC](https://user-images.githubusercontent.com/41458938/159606250-0101b27e-239f-42e7-bbc2-44613fd5289c.gif)
 
 #
 
