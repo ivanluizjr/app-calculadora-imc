@@ -4,6 +4,8 @@
 
 #### Este projeto tem por objetivo se aprofundar no desenvolvimento de aplicativos mobile usando Flutter/Dart, através desse projeto que se trata de um projeto real, podemos absorver toda a base e usabilidade de widgets de forma correta dentro do Flutter e assim evoluir para desenvolvimento de aplicativos mais complexos e mais bem escalaveis conforme vamos nos desenvolvendo e aprendendo o framework.
 
+#### Este aplicativo foi inspirado no design do link a seguir: https://dribbble.com/shots/4585382/attachments/4585382-Simple-BMI-Calculator?mode=media
+
 #
 
 ### Projeto Finalizado
