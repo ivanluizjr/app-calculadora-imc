@@ -1,14 +1,12 @@
 import 'dart:math';
 
-import 'package:flutter/widgets.dart';
-
 class CalculatorBrain {
-  CalculatorBrain({@required this.height, @required this.weight});
+  CalculatorBrain({required this.height, required this.weight});
 
   final int height;
   final int weight;
 
-  double _imc;
+  late double _imc;
 
   String calculatorIMC() {
     _imc = weight / pow(height / 100, 2);
@@ -28,6 +26,38 @@ class CalculatorBrain {
       return 'Obesidade grau 2';
     } else {
       return 'Obesidade grau 3';
+    }
+  }
+
+  String getRange() {
+    if (_imc < 18.5) {
+      return 'Abaixo do Peso IMC Range:';
+    } else if (_imc >= 18.5 && _imc < 25) {
+      return 'Normal IMC Range:';
+    } else if (_imc >= 25 && _imc < 30) {
+      return 'Sobrepeso IMC Range: ';
+    } else if (_imc >= 30 && _imc < 35) {
+      return 'Obesidade grau 1 IMC Range:';
+    } else if (_imc >= 35 && _imc < 40) {
+      return 'Obesidade grau 2 IMC Range:';
+    } else {
+      return 'Obesidade grau 3 IMC Range:';
+    }
+  }
+
+  String getRangeResult() {
+    if (_imc < 18.5) {
+      return '18,5 kg/m2';
+    } else if (_imc >= 18.5 && _imc < 25) {
+      return '18,5 - 24,9 kg/m2';
+    } else if (_imc >= 25 && _imc < 30) {
+      return '25,0 - 29,9 kg/m2';
+    } else if (_imc >= 30 && _imc < 35) {
+      return '30,0 - 34,9 kg/m2';
+    } else if (_imc >= 35 && _imc < 40) {
+      return '35,0 - 39,9 kg/m2';
+    } else {
+      return '40,0 kg/m2';
     }
   }
 

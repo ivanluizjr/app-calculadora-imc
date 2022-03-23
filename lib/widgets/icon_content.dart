@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
-import 'constants.dart';
 
-class InconContent extends StatelessWidget {
-  InconContent({this.icon, this.label});
+class IconContent extends StatelessWidget {
+  const IconContent({
+    required this.icon,
+    required this.label,
+    required this.color,
+  });
 
-  final IconData icon;
-  final String label;
+  final IconData? icon;
+  final String? label;
+  final Color? color;
 
   @override
   Widget build(BuildContext context) {
@@ -14,13 +18,17 @@ class InconContent extends StatelessWidget {
         Icon(
           icon,
           size: 100.0,
+          color: color,
         ),
-        SizedBox(
+        const SizedBox(
           height: 20.0,
         ),
         Text(
-          label,
-          style: kLabelTextStyle,
+          label!,
+          style: TextStyle(
+            color: color,
+            fontWeight: FontWeight.bold,
+          ),
         ),
       ],
     );

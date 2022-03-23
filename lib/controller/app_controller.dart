@@ -6,22 +6,26 @@ enum Gender {
   male,
 }
 
+enum SelectedIcon {
+  active,
+  inactive,
+}
+
 class Controller extends ChangeNotifier {
-  Gender selectedGender;
-  int weight = 50;
-  int age = 15;
+  Gender? selectedGender;
+  SelectedIcon? selectedIcon;
+  // final weight = ValueNotifier<int>(50);
+  // final age = ValueNotifier<int>(15);
 
-  void subPeso() {
-    if (weight > 0) {
-      weight--;
-      notifyListeners();
-    }
-  }
+  // void subPeso() {
+  //   if (weight.value > 0) {
+  //     weight.value--;
+  //   }
+  // }
 
-  void addPeso() {
-    weight++;
-    notifyListeners();
-  }
+  // void addPeso() {
+  //   weight.value++;
+  // }
 
   void genderMale() {
     selectedGender = Gender.male;
@@ -33,15 +37,23 @@ class Controller extends ChangeNotifier {
     notifyListeners();
   }
 
-  void subAge() {
-    if (age > 0) {
-      age--;
-      notifyListeners();
-    }
+  // void subAge() {
+  //   if (age.value > 0) {
+  //     age.value--;
+  //   }
+  // }
+
+  // void addAge() {
+  //   age.value++;
+  // }
+
+  void iconActive() {
+    selectedIcon = SelectedIcon.active;
+    notifyListeners();
   }
 
-  void addAge() {
-    age++;
+  void iconInactive() {
+    selectedIcon = SelectedIcon.inactive;
     notifyListeners();
   }
 }
